@@ -1,4 +1,4 @@
-package com.ataha.organization;
+package com.ataha.department;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +11,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableFeignClients
 @SpringBootApplication
-public class OrganizationServiceApplication {
+public class DepartmentServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrganizationServiceApplication.class, args);
+		SpringApplication.run(DepartmentServiceApplication.class, args);
 	}
 }
