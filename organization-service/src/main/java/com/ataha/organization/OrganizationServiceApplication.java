@@ -28,9 +28,11 @@ public class OrganizationServiceApplication {
 	@Bean
 	public Docket personApi() {
 
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.ataha.organization.controller"))
-				.paths(PathSelectors.any()).build();
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+					.apis(RequestHandlerSelectors.basePackage("com.ataha.organization.controller"))
+					.paths(PathSelectors.any())
+				.build();
 	}
 
 	@Bean

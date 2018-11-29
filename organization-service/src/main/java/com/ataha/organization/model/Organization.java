@@ -16,8 +16,8 @@ public class Organization {
 		this.id = id;
 		this.name = name;
 		this.address = address;
-		this.departments = Collections.unmodifiableList(new ArrayList<>(departments));
-		this.employees = Collections.unmodifiableList(new ArrayList<>(employees));
+		this.departments = departments != null ? Collections.unmodifiableList(new ArrayList<>(departments)) : null;
+		this.employees = employees != null ? Collections.unmodifiableList(new ArrayList<>(employees)) : null;
 	}
 
 }
