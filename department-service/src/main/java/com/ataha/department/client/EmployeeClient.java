@@ -11,6 +11,6 @@ import com.ataha.department.model.Employee;
 @FeignClient(name = "employee-service")
 public interface EmployeeClient {
 
-	@GetMapping("/employee/department/{departmentId}")
+	@GetMapping("/department/{departmentId}")
 	List<Employee> findEmployeesByDepartmentId(@PathVariable("departmentId") Long departmentId);
 }
