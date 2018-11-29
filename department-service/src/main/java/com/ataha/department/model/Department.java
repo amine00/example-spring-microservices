@@ -15,7 +15,7 @@ public class Department {
 		this.id = id;
 		this.organizationId = organizationId;
 		this.name = name;
-		this.employees = employees != null ? Collections.unmodifiableList(new ArrayList<>(employees)) : null;
+		this.employees = (employees != null ? Collections.unmodifiableList(new ArrayList<>(employees)) : null);
 	}
 
 }

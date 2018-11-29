@@ -1,6 +1,7 @@
 package com.ataha.department.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,12 +61,15 @@ public class DepartmentController {
 
 	@GetMapping("/organization-with-employees/{organizationId}")
 	public List<Department> findByOrganizationWithEmployees(@PathVariable("organizationId") Long organizationId) {
-		
+
 		LOGGER.info("Department find: organizationId={}", organizationId);
-		
+
 		List<Department> departments = departmentRepository.findByOrganizationId(organizationId);
-		departments.forEach(department -> new Department(department.id, department.organizationId, department.name, employeeClient.findEmployeesByDepartmentId(department.id)));
-		
+
+		departments = departments.stream().map(department -> new Department(department.id, department.organizationId,
+				department.name, employeeClient.findEmployeesByDepartmentId(department.id)))
+				.collect(Collectors.toList());
+
 		return departments;
 	}
 }
