@@ -34,12 +34,12 @@ public class EmployeeRepository {
 		return employees;
 	}
 
-	public List<Employee> findByDepartment(Long departmentId) {
+	public List<Employee> findByDepartmentId(Long departmentId) {
 
 		return employees.stream().filter(employee -> employee.departmentId.equals(departmentId)).collect(toList());
 	}
 
-	public List<Employee> findByOrganization(Long organizationId) {
+	public List<Employee> findByOrganizationId(Long organizationId) {
 
 		return employees.stream().filter(employee -> employee.organizationId.equals(organizationId)).collect(toList());
 	}
