@@ -28,7 +28,7 @@ public class EmployeeServiceApplication {
 
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-					.apis(RequestHandlerSelectors.basePackage("com.ataha.employee.controllers"))
+					.apis(RequestHandlerSelectors.basePackage("com.ataha.employee.controller"))
 					.paths(PathSelectors.any())
 				.build();
 	}
