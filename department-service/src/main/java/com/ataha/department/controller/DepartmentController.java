@@ -31,7 +31,7 @@ public class DepartmentController {
 	}
 
 	@PostMapping("/")
-	public Department add(@RequestBody Department department) {
+	public Department addDepartment(@RequestBody Department department) {
 
 		LOGGER.info("Department add: {}", department);
 		return departmentRepository.add(department);
@@ -45,7 +45,7 @@ public class DepartmentController {
 	}
 
 	@GetMapping("/")
-	public List<Department> findAllDepartment() {
+	public List<Department> findAllDepartments() {
 
 		LOGGER.info("Department find");
 		return departmentRepository.findAll();
